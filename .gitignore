@@ -1,0 +1,32 @@
+# ----------------------
+# System files
+# ----------------------
+.DS_Store
+**/.DS_Store
+
+# ----------------------
+# Python / Backend
+# ----------------------
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.*
+*.log
+uvicorn_pid.txt
+test_logs.txt
+
+# ----------------------
+# Frontend / Node
+# ----------------------
+node_modules/
+dist/
+build/
+
+# ----------------------
+# IDE / Editor
+# ----------------------
+.vscode/
+.idea/
