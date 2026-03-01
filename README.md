@@ -3,8 +3,8 @@
 ## About
 SitePulse is a full-stack Website Performance Audit Engine that analyzes real-world websites using Google PageSpeed Insights API and generates structured technical optimization recommendations.
 
-<!-- Replace 'project_screenshot.png' with the actual path to your image later -->
-![SitePulse Project Screenshot](project_screenshot.png)
+<!-- Replace 'images/project_screenshot.png' with the actual path to your image later -->
+![SitePulse Project Screenshot](images/project_screenshot.png)
 
 ## System Architecture
 
