@@ -1,0 +1,35 @@
+services:
+  # --------------------------------
+  # 1. Python FastAPI Backend Service
+  # --------------------------------
+  - type: web
+    name: sitepulse-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      # Render will ask you to securely input your GOOGLE_API_KEY in the dashboard
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.10.13
+
+  # --------------------------------
+  # 2. React Vite Frontend Service
+  # --------------------------------
+  - type: web
+    name: sitepulse-frontend
+    env: static
+    rootDir: sitepulse-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      # Automatically syncs the frontend's API URL to whatever URL Render assigns to the Backend!
+      - key: VITE_API_BASE_URL
+        fromService:
+          type: web
+          name: sitepulse-backend
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: NODE_VERSION
+        value: 20.10.0
